@@ -1,3 +1,12 @@
+@import url("https://use.typekit.net/lks0xjc.css");
+#cards-list-view > h1 {
+  font-family: "config-variable", sans-serif;
+  color: rgb(10, 103, 89);
+  font-size: medium;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
 #cards-list-view #cards-container {
   display: flex;
   flex-wrap: wrap;
@@ -6,6 +15,7 @@
 }
 #cards-list-view #cards-container > img {
   width: calc(50% - 20px);
+  border-radius: 7px;
 }
 
 /*# sourceMappingURL=cards.css.map */

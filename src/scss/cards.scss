@@ -1,4 +1,15 @@
+@import "variables";
+
 #cards-list-view {
+
+    > h1 {
+        @include defaultFont();
+        color: $primary-color;
+        font-size: medium;
+        font-size: 25px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
 
     #cards-container {
         display: flex;
@@ -8,7 +19,7 @@
 
         > img {
             width: calc(50% - 20px);
-            
+            border-radius: 7px;
         }
     }
 }

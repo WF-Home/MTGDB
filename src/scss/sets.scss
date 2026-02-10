@@ -11,6 +11,7 @@
             color: $primary-color;
             font-size: 20px;
             font-weight: 700;
+            margin-bottom: 20px;
         }
 
         > .sets-container {
@@ -19,16 +20,30 @@
             align-items: center;
             gap: 5px;
 
-            .sets-button {
-                text-decoration: none;
+            .sets-button {  
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
                 border-style: none;
                 width: 85%;
-                height: 35px;
-                line-height: 35px;
+                height: 45px;
+                line-height: 45px;
                 font-size: 15px;
                 background-color: $primary-color;
-                color: whitesmoke;
                 border-radius: 7px;
+
+                img {
+                    max-height: 70%;
+                    max-width: 50px;
+                    margin-left: 20px;
+                }
+
+                a {
+                    width: 80%;
+                    text-decoration: none;
+                    color: whitesmoke;
+                    line-height: 15px;
+                }
             }
         }
     }

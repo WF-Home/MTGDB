@@ -8,6 +8,7 @@
   color: rgb(10, 103, 89);
   font-size: 20px;
   font-weight: 700;
+  margin-bottom: 20px;
 }
 #setSelection > .sets > .sets-container {
   display: flex;
@@ -16,15 +17,27 @@
   gap: 5px;
 }
 #setSelection > .sets > .sets-container .sets-button {
-  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-style: none;
   width: 85%;
-  height: 35px;
-  line-height: 35px;
+  height: 45px;
+  line-height: 45px;
   font-size: 15px;
   background-color: rgb(10, 103, 89);
-  color: whitesmoke;
   border-radius: 7px;
+}
+#setSelection > .sets > .sets-container .sets-button img {
+  max-height: 70%;
+  max-width: 50px;
+  margin-left: 20px;
+}
+#setSelection > .sets > .sets-container .sets-button a {
+  width: 80%;
+  text-decoration: none;
+  color: whitesmoke;
+  line-height: 15px;
 }
 
 /*# sourceMappingURL=sets.css.map */
