@@ -1,4 +1,4 @@
-const api = "https://api.magicthegathering.io/v1"
+const api = "https://api.scryfall.com/cards/search"
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -11,10 +11,11 @@ window.addEventListener("load", () => {
 })
 
 async function getCards() {
-    const response = await fetch(`${api}/cards?set=${set}`);
+    const URI = `e:${set}`
+    const response = await fetch(`${api}?q=${encodeURIComponent(URI)}`);
     const data = await response.json();
-
-    generateCards(data.cards)
+    console.log(data)
+    generateCards(data.data)
 }
 
 function generateCards(cards) {
@@ -27,7 +28,7 @@ function generateCards(cards) {
     `;
 
     cards.forEach( card => {
-        template += `<img src="${card.imageUrl}">`;
+        template += `<img src="${card.image_uris.normal}">`;
     });
 
     template += `</section>`

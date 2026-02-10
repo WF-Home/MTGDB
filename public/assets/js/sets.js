@@ -1,10 +1,13 @@
-const api = "https://api.magicthegathering.io/v1"
+const api = "https://api.scryfall.com/sets/"
 
 async function getSets() {
-    const response = await fetch(`${api}/sets`);
-    const data = await response.json();
+    const response = await fetch(api);
+    const obj = await response.json();
 
-    const groupedSets = Object.groupBy(data.sets, ({ releaseDate }) => new Date(releaseDate).getFullYear());
+    const filteredData = obj.data.filter( (set) => set.card_count > 20)
+    console.log(filteredData)
+
+    const groupedSets = Object.groupBy(filteredData, ({ released_at }) => new Date(released_at).getFullYear());
 
     generateSetSelection(groupedSets);
 }
