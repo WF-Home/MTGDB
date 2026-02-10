@@ -19,15 +19,19 @@ function generateSetSelection(sets) {
 
     orderedYears.forEach( year => {
         template += `
-            <section>
+            <section class="sets">
                 <h2>${year}</h2>
+                <section class="sets-container">
         `
         const sortedSet = sets[year].sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate))
         sortedSet.forEach( set => {
             template += createSetButton(set);
         });
 
-        template += `</section>`
+        template += `
+                </section>
+            </section>
+        `
     })
 
     setSelection.innerHTML = template;
@@ -36,7 +40,7 @@ function generateSetSelection(sets) {
 
 function createSetButton(set) {
     return `
-        <button>${set.name}</button>
+        <button class="sets-button">${set.name}</button>
     `
 }
 

@@ -1,0 +1,33 @@
+@import "variables";
+
+#setSelection {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    > .sets {
+
+        > h2 {
+            color: $primary-color;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        > .sets-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+
+            .sets-button {
+                width: 85%;
+                height: 35px;
+                font-size: 15px;
+                background-color: $primary-color;
+                color: whitesmoke;
+                border-style: none;
+                border-radius: 7px;
+            }
+        }
+    }
+}

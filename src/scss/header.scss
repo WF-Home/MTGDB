@@ -1,0 +1,18 @@
+@import "variables";
+
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    background-color: $primary-color;
+    color: whitesmoke;
+
+    padding: 20px 2px;
+    margin-bottom: 20px;
+
+    h1 {
+        font-weight: 600;
+        font-size: 20px;
+    }
+}

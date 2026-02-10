@@ -1,5 +1,12 @@
+@import url("https://use.typekit.net/lks0xjc.css");
 * {
   text-align: center;
+}
+
+body {
+  font-family: "config-variable", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=style.css.map */

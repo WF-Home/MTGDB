@@ -1,0 +1,7 @@
+@import url("https://use.typekit.net/lks0xjc.css");
+
+$primary-color: rgb(10, 103, 89);
+
+@mixin defaultFont {
+    font-family: "config-variable", sans-serif;
+}

@@ -1,3 +1,11 @@
+@import "variables";
+
 * {
     text-align: center;
+}
+
+body {
+    @include defaultFont();
+    display: flex;
+    flex-direction: column;
 }

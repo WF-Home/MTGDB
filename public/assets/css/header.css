@@ -1,3 +1,16 @@
-
+@import url("https://use.typekit.net/lks0xjc.css");
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgb(10, 103, 89);
+  color: whitesmoke;
+  padding: 20px 2px;
+  margin-bottom: 20px;
+}
+header h1 {
+  font-weight: 600;
+  font-size: 20px;
+}
 
 /*# sourceMappingURL=header.css.map */
