@@ -16,12 +16,14 @@
   gap: 5px;
 }
 #setSelection > .sets > .sets-container .sets-button {
+  text-decoration: none;
+  border-style: none;
   width: 85%;
   height: 35px;
+  line-height: 35px;
   font-size: 15px;
   background-color: rgb(10, 103, 89);
   color: whitesmoke;
-  border-style: none;
   border-radius: 7px;
 }
 

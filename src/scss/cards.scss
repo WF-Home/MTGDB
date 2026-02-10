@@ -1,0 +1,14 @@
+#cards-list-view {
+
+    #cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+
+        > img {
+            width: calc(50% - 20px);
+            
+        }
+    }
+}

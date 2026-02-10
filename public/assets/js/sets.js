@@ -40,7 +40,7 @@ function generateSetSelection(sets) {
 
 function createSetButton(set) {
     return `
-        <button class="sets-button">${set.name}</button>
+        <a class="sets-button" href="/cards.html?set=${set.code}&name=${set.name}">${set.name}</a>
     `
 }
 

@@ -20,12 +20,14 @@
             gap: 5px;
 
             .sets-button {
+                text-decoration: none;
+                border-style: none;
                 width: 85%;
                 height: 35px;
+                line-height: 35px;
                 font-size: 15px;
                 background-color: $primary-color;
                 color: whitesmoke;
-                border-style: none;
                 border-radius: 7px;
             }
         }
