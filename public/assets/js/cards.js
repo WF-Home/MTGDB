@@ -14,7 +14,6 @@ async function getCards() {
     const URI = `e:${set}`
     const response = await fetch(`${api}?q=${encodeURIComponent(URI)}`);
     const data = await response.json();
-    console.log(data)
     generateCards(data.data)
 }
 
@@ -28,7 +27,9 @@ function generateCards(cards) {
     `;
 
     cards.forEach( card => {
-        template += `<img src="${card.image_uris.normal}">`;
+        if (Object.hasOwn(card, 'image_uris')) {
+              template += `<img src="${card.image_uris.small}">`;
+        }
     });
 
     template += `</section>`
