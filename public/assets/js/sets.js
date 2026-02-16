@@ -6,9 +6,11 @@ async function getSets() {
     const response = await fetch(api);
     const obj = await response.json();
 
-    // Filtering any sets that has less than 20 cards
+    // Filtering any sets that has less than 20 cards and are not token or memorabilia sets
 
-    const filteredData = obj.data.filter( (set) => set.card_count > 20)
+    const filteredData = obj.data.filter( 
+        (set) => set.card_count > 20 && ( set.set_type !== "memorabilia" && set.set_type !== "token" ) 
+    )
     console.log(filteredData)
 
     // Grouping sets by their release year

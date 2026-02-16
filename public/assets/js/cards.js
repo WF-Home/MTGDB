@@ -23,19 +23,29 @@ async function getCards() {
 function generateCards(cards) {
 
     let cardListView = document.getElementById("cards-list-view");
+    let title = document.createElement("h1")
+    let cardContainer = document.createElement("section")
 
-    let template = `
-        <h1>${setName}</h1>
-        <section id="cards-container">
-    `;
+    cardContainer.setAttribute("id", "card-container")
+
+    title.innerHTML = setName
+
+    cardListView.append(title);
+    cardListView.append(cardContainer);
 
     cards.forEach( card => {
         if (Object.hasOwn(card, 'image_uris')) {
-              template += `<img class="imgCards" src="${card.image_uris.large}">`;
+
+            let cardObj = document.createElement("img")
+
+            cardObj.setAttribute("class", "imgCards")
+            cardObj.setAttribute("src", card.image_uris.small)
+            cardObj.addEventListener("click", function() {
+                console.log(card)
+            })
+
+            cardContainer.append(cardObj)
+
         }
     });
-
-    template += `</section>`
-
-    cardListView.innerHTML = template;
 }
