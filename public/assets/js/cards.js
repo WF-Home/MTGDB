@@ -49,6 +49,7 @@ function generateCards(cards) {
     let closeButton = document.createElement("button")
     closeButton.addEventListener("click", function() {
         cardDetailsView.classList.remove("isDisplayed")
+        cardDetailsView.style.display = "none"
     })
     
     cardDetailsView.append(cardDetailsContainer)
@@ -63,9 +64,10 @@ function generateCards(cards) {
             let cardObj = document.createElement("img")
 
             cardObj.setAttribute("class", "imgCards")
-            cardObj.setAttribute("src", card.image_uris.small)
+            cardObj.setAttribute("src", card.image_uris.normal)
             cardObj.addEventListener("click", function() {
                 cardDetailsContainer.innerHTML = cardDetails(card)
+                cardDetailsView.style.display = "flex"
                 cardDetailsView.classList.add("isDisplayed")
             })
 

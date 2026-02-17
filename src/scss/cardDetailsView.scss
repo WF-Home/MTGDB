@@ -15,7 +15,7 @@
     left: 0;
     top: 0;
     opacity: 0;
-    transition: all 1s ease-in;
+    transition: opacity 1s ease-in;
 
     button {
         background-color: $primary-color;
@@ -30,14 +30,14 @@
 }
 
 #cardDetailsView.isDisplayed {
-    display: flex;
     opacity: 1;
 }
 
 #cardDetailsContainer {
     img {
-        width: 80%;
-        margin-bottom: 30px;
+        max-width: 80%;
+        margin-bottom: 10px;
+        border-radius: 13px;
     }
 
     > section {
@@ -67,6 +67,61 @@
         .artist {
             font-weight: 500;
             margin: 10px 0px;
+        }
+    }
+}
+
+@media only screen and (min-width: 510px) {
+    #cardDetailsContainer {
+        img {
+            max-width: 60%;
+        }
+    }
+}
+
+@media only screen and (min-width: 630px) {
+    #cardDetailsContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0px 40px;
+        img {
+            max-width: 50%;
+        }
+    }
+}
+
+@media only screen and (min-width: 930px) {
+    #cardDetailsContainer {
+        img {
+            max-width: 40%;
+        }
+        > section {
+            > div {
+                > h1 {
+                    font-size: 40px;
+                }
+
+                > p {
+                    font-size: 20px;
+                }
+            }
+
+            .oracle, .flavour {
+                font-size: 20px;
+            }
+
+            .artist {
+                font-size: 22px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    #cardDetailsContainer {
+        img {
+            max-width: 30%;
         }
     }
 }

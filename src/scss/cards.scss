@@ -23,3 +23,25 @@
         }
     }
 }
+
+@media only screen and (min-width: 530px) {
+    #cards-list-view {
+        #cards-container {
+            > img {
+                width: calc(25% - 20px);
+                border-radius: 7px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 930px) {
+    #cards-list-view {
+        #cards-container {
+            > img {
+                width: calc(16% - 20px);
+                border-radius: 7px;
+            }
+        }
+    }
+}

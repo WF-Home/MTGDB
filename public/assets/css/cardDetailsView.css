@@ -14,7 +14,7 @@
   left: 0;
   top: 0;
   opacity: 0;
-  transition: all 1s ease-in;
+  transition: opacity 1s ease-in;
 }
 #cardDetailsView button {
   background-color: rgb(10, 103, 89);
@@ -28,13 +28,13 @@
 }
 
 #cardDetailsView.isDisplayed {
-  display: flex;
   opacity: 1;
 }
 
 #cardDetailsContainer img {
-  width: 80%;
-  margin-bottom: 30px;
+  max-width: 80%;
+  margin-bottom: 10px;
+  border-radius: 13px;
 }
 #cardDetailsContainer > section {
   display: flex;
@@ -60,6 +60,45 @@
 #cardDetailsContainer > section .artist {
   font-weight: 500;
   margin: 10px 0px;
+}
+
+@media only screen and (min-width: 510px) {
+  #cardDetailsContainer img {
+    max-width: 60%;
+  }
+}
+@media only screen and (min-width: 630px) {
+  #cardDetailsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0px 40px;
+  }
+  #cardDetailsContainer img {
+    max-width: 50%;
+  }
+}
+@media only screen and (min-width: 930px) {
+  #cardDetailsContainer img {
+    max-width: 40%;
+  }
+  #cardDetailsContainer > section > div > h1 {
+    font-size: 40px;
+  }
+  #cardDetailsContainer > section > div > p {
+    font-size: 20px;
+  }
+  #cardDetailsContainer > section .oracle, #cardDetailsContainer > section .flavour {
+    font-size: 20px;
+  }
+  #cardDetailsContainer > section .artist {
+    font-size: 22px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  #cardDetailsContainer img {
+    max-width: 30%;
+  }
 }
 
 /*# sourceMappingURL=cardDetailsView.css.map */
