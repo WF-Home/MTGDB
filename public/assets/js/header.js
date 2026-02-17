@@ -1,14 +1,13 @@
 
 let header = document.querySelector("header")
 
-header.innerHTML = headerContent();
+generateHeaderContent();
 
-function headerContent() {
-    return `
-        <h1>Magic The Gathering Card Database</h1>
-        <section id="search-container">
-            <input>
-            <button>search</button>
-        </section>
-    `
+function generateHeaderContent() {
+
+    let heading = document.createElement("h1")
+    heading.innerHTML = "Magic The Gathering Card Database"
+
+    header.append(heading)
+
 }

@@ -65,7 +65,6 @@ function generateCards(cards) {
             cardObj.setAttribute("class", "imgCards")
             cardObj.setAttribute("src", card.image_uris.small)
             cardObj.addEventListener("click", function() {
-                console.log(card)
                 cardDetailsContainer.innerHTML = cardDetails(card)
                 cardDetailsView.classList.add("isDisplayed")
             })
