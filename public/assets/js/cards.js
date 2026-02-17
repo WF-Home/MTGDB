@@ -21,6 +21,9 @@ async function getCards() {
 // Generates Cards
 
 function generateCards(cards) {
+
+    // Create card list view
+
     let main = document.querySelector("main")
     let cardListView = document.getElementById("cards-list-view");
     let title = document.createElement("h1")
@@ -38,6 +41,8 @@ function generateCards(cards) {
 
     main.append(cardDetailsView)
 
+    // Create card details view
+
     let cardDetailsContainer = document.createElement("article")
     cardDetailsContainer.setAttribute("id", "cardDetailsContainer")
 
@@ -51,6 +56,7 @@ function generateCards(cards) {
 
     closeButton.innerHTML = "Go Back To List"
 
+    // create interactable cards to open details view
     cards.forEach( card => {
         if (Object.hasOwn(card, 'image_uris')) {
 
