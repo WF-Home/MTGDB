@@ -31,6 +31,12 @@
                 font-size: 15px;
                 background-color: $primary-color;
                 border-radius: 7px;
+                box-shadow: rgba(0, 0, 0, 0.464) 4px 4px 8px;
+                transition: scale 0.1s ease;
+
+                &:hover {
+                    scale: 1.015;
+                }
 
                 img {
                     max-height: 70%;
@@ -41,8 +47,8 @@
                 a {
                     width: 80%;
                     text-decoration: none;
-                    color: whitesmoke;
                     line-height: 15px;
+                    color: whitesmoke;
                 }
             }
         }

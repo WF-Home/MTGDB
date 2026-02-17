@@ -27,6 +27,11 @@
   font-size: 15px;
   background-color: rgb(10, 103, 89);
   border-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.464) 4px 4px 8px;
+  transition: scale 0.1s ease;
+}
+#setSelection > .sets > .sets-container .sets-button:hover {
+  scale: 1.015;
 }
 #setSelection > .sets > .sets-container .sets-button img {
   max-height: 70%;
@@ -36,8 +41,8 @@
 #setSelection > .sets > .sets-container .sets-button a {
   width: 80%;
   text-decoration: none;
-  color: whitesmoke;
   line-height: 15px;
+  color: whitesmoke;
 }
 
 @media only screen and (min-width: 530px) {

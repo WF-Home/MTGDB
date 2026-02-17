@@ -16,6 +16,10 @@
 #cards-list-view #cards-container > img {
   width: calc(50% - 20px);
   border-radius: 7px;
+  transition: scale 0.5s ease;
+}
+#cards-list-view #cards-container > img:hover {
+  scale: 1.05;
 }
 
 @media only screen and (min-width: 530px) {

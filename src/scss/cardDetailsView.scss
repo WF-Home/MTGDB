@@ -26,6 +26,11 @@
         border-radius: 7px;
         font-size: medium;
         font-weight: bold;
+        transition: scale 0.5s ease;
+
+        &:hover {
+            scale: 1.05;
+        }
     }
 }
 
