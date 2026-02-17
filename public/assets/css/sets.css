@@ -40,4 +40,21 @@
   line-height: 15px;
 }
 
+@media only screen and (min-width: 530px) {
+  #setSelection > .sets > .sets-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  #setSelection > .sets > .sets-container .sets-button {
+    width: calc(50vw - 20px);
+  }
+}
+@media only screen and (min-width: 930px) {
+  #setSelection > .sets > .sets-container .sets-button {
+    width: calc(33.3333333333vw - 20px);
+  }
+}
+
 /*# sourceMappingURL=sets.css.map */

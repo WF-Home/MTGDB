@@ -48,3 +48,32 @@
         }
     }
 }
+
+@media only screen and (min-width: 530px) {
+    #setSelection {
+        > .sets {
+            > .sets-container {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+
+                .sets-button {  
+                    width: calc(100vw / 2 - 20px);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 930px) {
+    #setSelection {
+        > .sets {
+            > .sets-container {
+                .sets-button {  
+                    width: calc(100vw / 3 - 20px);
+                }
+            }
+        }
+    }
+}
