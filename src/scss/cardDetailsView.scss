@@ -1,0 +1,71 @@
+@import "variables";
+
+#cardDetailsView {
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 100vh;
+    width: 100%;
+    background-color: #000000d9;
+    color: whitesmoke;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: all 1s ease-in;
+
+    button {
+        background-color: $primary-color;
+        color: whitesmoke;
+        height: 50px;
+        width: 150px;
+        border: none;
+        border-radius: 7px;
+        font-size: medium;
+        font-weight: bold;
+    }
+}
+
+#cardDetailsView.isDisplayed {
+    display: flex;
+    opacity: 1;
+}
+
+#cardDetailsContainer {
+    img {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+    > section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        > div {
+            margin-bottom: 20px;
+
+            > h1 {
+                font-size: larger;
+                font-weight: bolder;
+            }
+        }
+
+        .oracle, .flavour {
+            width: 80%;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        .flavour {
+            font-style: italic;
+        }
+
+        .artist {
+            font-weight: 500;
+        }
+    }
+}

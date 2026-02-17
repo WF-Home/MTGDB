@@ -1,0 +1,64 @@
+@import url("https://use.typekit.net/lks0xjc.css");
+#cardDetailsView {
+  display: none;
+  position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8509803922);
+  color: whitesmoke;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: all 1s ease-in;
+}
+#cardDetailsView button {
+  background-color: rgb(10, 103, 89);
+  color: whitesmoke;
+  height: 50px;
+  width: 150px;
+  border: none;
+  border-radius: 7px;
+  font-size: medium;
+  font-weight: bold;
+}
+
+#cardDetailsView.isDisplayed {
+  display: flex;
+  opacity: 1;
+}
+
+#cardDetailsContainer img {
+  width: 80%;
+  margin-bottom: 30px;
+}
+#cardDetailsContainer > section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#cardDetailsContainer > section > div {
+  margin-bottom: 20px;
+}
+#cardDetailsContainer > section > div > h1 {
+  font-size: larger;
+  font-weight: bolder;
+}
+#cardDetailsContainer > section .oracle, #cardDetailsContainer > section .flavour {
+  width: 80%;
+  text-align: left;
+  margin-bottom: 5px;
+}
+#cardDetailsContainer > section .flavour {
+  font-style: italic;
+}
+#cardDetailsContainer > section .artist {
+  font-weight: 500;
+}
+
+/*# sourceMappingURL=cardDetailsView.css.map */
