@@ -12,5 +12,22 @@ header h1 {
   font-weight: 600;
   font-size: 20px;
 }
+header section {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+header section input {
+  width: 300px;
+  height: 25px;
+  border-radius: 3px;
+  border: none;
+}
+header section button {
+  background-color: whitesmoke;
+  color: rgb(10, 103, 89);
+  border: none;
+  border-radius: 3px;
+}
 
 /*# sourceMappingURL=header.css.map */

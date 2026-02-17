@@ -15,4 +15,24 @@ header {
         font-weight: 600;
         font-size: 20px;
     }
+
+    section {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+
+        input {
+            width: 300px;
+            height: 25px;
+            border-radius: 3px;
+            border: none;
+        }
+
+        button {
+            background-color: whitesmoke;
+            color: $primary-color;
+            border: none;
+            border-radius: 3px;
+        }
+    }
 }

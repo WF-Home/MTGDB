@@ -1,4 +1,13 @@
 @import url("https://use.typekit.net/lks0xjc.css");
+#searchError {
+  font-size: 25px;
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+  font-weight: 600;
+  color: rgb(10, 103, 89);
+}
+
 #cards-list-view > h1 {
   font-family: "config-variable", sans-serif;
   color: rgb(10, 103, 89);

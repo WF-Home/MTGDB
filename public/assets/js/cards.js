@@ -1,9 +1,11 @@
 const api = "https://api.scryfall.com/cards/search"
 
+
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const set = urlParams.get('set'); 
 const setName = urlParams.get('name');
+const userSearch = urlParams.get('search')
 
 window.addEventListener("load", () => {
     getCards();
@@ -12,8 +14,14 @@ window.addEventListener("load", () => {
 // Fetch Card list based on set
 
 async function getCards() {
-    const URI = `e:${set}`
-    const response = await fetch(`${api}?q=${encodeURIComponent(URI)}`);
+    let response = ""
+    if (set) {
+        const URI = `e:${set}`
+        response = await fetch(`${api}?order=color&q=${encodeURIComponent(URI)}`);
+    } else {
+        response = await fetch(`${api}?q=${userSearch}`)
+    }
+
     const data = await response.json();
     generateCards(data.data)
 }
@@ -21,60 +29,63 @@ async function getCards() {
 // Generates Cards
 
 function generateCards(cards) {
-
     // Create card list view
-
     let main = document.querySelector("main")
-    let cardListView = document.getElementById("cards-list-view");
-    let title = document.createElement("h1")
-    let cardContainer = document.createElement("section")
 
-    cardContainer.setAttribute("id", "cards-container")
+    if (cards !== undefined) {
+        let cardListView = document.getElementById("cards-list-view");
+        let title = document.createElement("h1")
+        let cardContainer = document.createElement("section")
 
-    title.innerHTML = setName
+        cardContainer.setAttribute("id", "cards-container")
 
-    cardListView.append(title)
-    cardListView.append(cardContainer)
+        title.innerHTML = setName
 
-    let cardDetailsView = document.createElement("section")
-    cardDetailsView.setAttribute("id", "cardDetailsView")
+        cardListView.append(title)
+        cardListView.append(cardContainer)
 
-    main.append(cardDetailsView)
+        let cardDetailsView = document.createElement("section")
+        cardDetailsView.setAttribute("id", "cardDetailsView")
 
-    // Create card details view
+        main.append(cardDetailsView)
 
-    let cardDetailsContainer = document.createElement("article")
-    cardDetailsContainer.setAttribute("id", "cardDetailsContainer")
+        // Create card details view
 
-    let closeButton = document.createElement("button")
-    closeButton.addEventListener("click", function() {
-        cardDetailsView.classList.remove("isDisplayed")
-        cardDetailsView.style.display = "none"
-    })
-    
-    cardDetailsView.append(cardDetailsContainer)
-    cardDetailsView.append(closeButton)
+        let cardDetailsContainer = document.createElement("article")
+        cardDetailsContainer.setAttribute("id", "cardDetailsContainer")
 
-    closeButton.innerHTML = "Go Back To List"
+        let closeButton = document.createElement("button")
+            closeButton.addEventListener("click", function() {
+            cardDetailsView.classList.remove("isDisplayed")
+            cardDetailsView.style.display = "none"
+        })
+        
+        cardDetailsView.append(cardDetailsContainer)
+        cardDetailsView.append(closeButton)
 
-    // create interactable cards to open details view
-    cards.forEach( card => {
-        if (Object.hasOwn(card, 'image_uris')) {
+        closeButton.innerHTML = "Go Back To List"
 
-            let cardObj = document.createElement("img")
+        // create interactable cards to open details view
+        cards.forEach( card => {
+            if (Object.hasOwn(card, 'image_uris')) {
 
-            cardObj.setAttribute("class", "imgCards")
-            cardObj.setAttribute("src", card.image_uris.normal)
-            cardObj.addEventListener("click", function() {
-                cardDetailsContainer.innerHTML = cardDetails(card)
-                cardDetailsView.style.display = "flex"
-                cardDetailsView.classList.add("isDisplayed")
-            })
+                let cardObj = document.createElement("img")
 
-            cardContainer.append(cardObj)
+                cardObj.setAttribute("class", "imgCards")
+                cardObj.setAttribute("src", card.image_uris.normal)
+                cardObj.addEventListener("click", function() {
+                    cardDetailsContainer.innerHTML = cardDetails(card)
+                    cardDetailsView.style.display = "flex"
+                    cardDetailsView.classList.add("isDisplayed")
+                })
 
-        }
-    });
+                cardContainer.append(cardObj)
+
+            }
+        });
+    } else {
+        main.innerHTML = `<h1 id="searchError">Sorry! There were no available results for "${userSearch}"</h1>`
+    }
 }
 
 function cardDetails(card) {
